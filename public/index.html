@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form validation</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
+</head>
+<body>
+    <form name="myForm" method="post">
+        <p>
+            first Name
+            <input type="text" name="firstName" minlength="3" placeholder="first name">
+        </p>
+        <p>
+            last Name
+            <input type="text" name="lastName" minlength="3" placeholder="last name">
+        </p>
+        <p>
+            <label for="datepicker">Your birthday</label>
+            <input type="text" name="picker" id="datepicker" size="30">
+        </p>
+        <p>
+            Sex<br>
+            <input type="radio" name="sex" id="r1" value="male"><label for="r1">male</label>
+            <input type="radio" name="sex" id="r2" value="female"><label for="r2">female</label>
+        </p>
+
+        <p>
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" list="l1"
+                   pattern="[Uu]kraine|[Rr]ussian|[Aa]merica|[Tt]urkmenistan">
+            <datalist id="l1">
+                <option>Ukraine</option>
+                <option>Russian</option>
+                <option>America</option>
+                <option>Turkmenistan</option>
+            </datalist>
+        </p>
+        <p>
+            <label for="mail">What's your e-mail?</label>
+            <input type="email" id="mail" name="email">
+        </p>
+        <p>
+            <label for="pass">What's your password?</label>
+            <input type="password" id="pass" name="password">
+        </p>
+        <p>
+            <label for="address">What's your address?</label>
+            <input type="text" id="address" name="address">
+        </p>
+        <p>
+            <label for="msg">Leave a short message</label>
+            <textarea id="msg" name="msg" maxlength="140" rows="5"></textarea>
+        </p>
+        <p>
+            <input type="button" onclick="validate(this.form)" value="Submit">
+        </p>
+    </form>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>All data is correct!!!</p>
+        </div>
+
+    </div>
+</body>
+<script src="scripts/app.js"></script>
+</html>

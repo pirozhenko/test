@@ -1,0 +1,13 @@
+{
+  "name": "validation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pirog",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.5.2"
+  }
+}
